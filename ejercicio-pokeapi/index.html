@@ -35,7 +35,7 @@
       <header class="exercise-heading">
         <p class="eyebrow">JSON · PokeAPI</p>
         <h1>PokeAPI</h1>
-        <p class="exercise-heading__meta">Consigna original sin título ni número en la fuente.</p>
+        <p class="exercise-heading__meta">Ejercicio con la consigna original a resolver.</p>
       </header>
 
       <section class="content-panel" aria-labelledby="prompt-title">
@@ -49,20 +49,25 @@
           </p>
         </div>
         <div class="prompt-part">
-          <h3 class="prompt-part__title">tarea 2</h3>
+          <h3 class="prompt-part__title">Tarea 2</h3>
           <p class="prompt-text">
             Tomar la pokeapi y hacer que al darle click a cada tarjeta, aparezca un modal mostrando más datos del mismo pokemon, (imagen, stats, tipo, nombre, etc)
           </p>
         </div>
+        <aside class="source-note" aria-label="Nota original de la consigna">
+          <p>
+            NOTA: pueden usar <code>innerHTML+=&#96;&lt;etiqueta&gt;&#96;</code> para insertar etiquetas dentro de otras etiquetas dentro del html, recomiendo que si usan este tip, no usen comillas dobles ni simples, sera mas comodo con el backtick
+          </p>
+        </aside>
       </section>
 
       <section class="content-panel" aria-labelledby="results-title">
         <div class="results-header">
           <div class="panel-heading">
             <span class="panel-heading__mark" aria-hidden="true"></span>
-          <h2 id="results-title">Tarjetas y detalle</h2>
+            <h2 id="results-title">Resultado</h2>
           </div>
-          <p class="results-caption">Tarjetas con modal de detalle.</p>
+          <p class="results-caption">Datos cargados desde la PokeAPI.</p>
         </div>
 
         <div
@@ -70,27 +75,21 @@
           class="result-area pokemon-grid"
           aria-live="polite"
           aria-label="Resultados de Pokémon"
-        >
-          <div class="empty-state">
-            <span class="empty-state__symbol" aria-hidden="true">◉</span>
-            <p>Las tarjetas y sus detalles aparecerán aquí.</p>
-          </div>
-        </div>
+        ></div>
       </section>
 
       <template id="pokemon-card-template">
-        <button class="pokemon-card" type="button">
+        <article class="pokemon-card">
           <span class="pokemon-card__image-frame">
-            <img class="pokemon-card__image" alt="">
+            <img class="pokemon-card__image" alt="" loading="lazy" decoding="async">
           </span>
           <span class="pokemon-card__details">
             <span class="pokemon-card__number"></span>
             <span class="pokemon-card__name"></span>
             <span class="pokemon-card__types" role="list" aria-label="Tipos">
-              <span class="pokemon-card__type" role="listitem"></span>
             </span>
           </span>
-        </button>
+        </article>
       </template>
 
       <template id="pokemon-modal-template">

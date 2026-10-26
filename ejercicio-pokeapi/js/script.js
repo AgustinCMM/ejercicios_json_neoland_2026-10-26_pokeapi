@@ -1,4 +1,2 @@
-// Escribe aquí la solución del ejercicio.
-import { inicializarApp } from "./dom.js";
-
-inicializarApp();
+// Punto de entrada de la primera parte del ejercicio.
+import "./dom.js";

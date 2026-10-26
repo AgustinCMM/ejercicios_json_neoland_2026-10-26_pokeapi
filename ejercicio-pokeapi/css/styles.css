@@ -8,27 +8,12 @@
 .pokemon-card {
   display: block;
   width: 100%;
-  padding: 0;
   overflow: hidden;
   border: 1px solid var(--color-line);
   border-radius: 0.9rem;
   color: inherit;
   background: var(--color-panel);
   box-shadow: 0 8px 20px rgb(37 42 53 / 5%);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.pokemon-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgb(37 42 53 / 10%);
-}
-
-.pokemon-card:focus-visible {
-  outline: 3px solid var(--color-blue);
-  outline-offset: 3px;
 }
 
 .pokemon-card__image-frame {

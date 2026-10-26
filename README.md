@@ -17,7 +17,9 @@ La consigna no tiene título ni número original; por eso se usa el identificado
 - assets/favicon.svg: favicon local con temática de Poké Ball.
 - ejercicio-pokeapi/index.html: consigna, área de resultados y plantillas de tarjeta y modal.
 - ejercicio-pokeapi/css/styles.css: estilos de las tarjetas y del modal.
-- ejercicio-pokeapi/js/script.js: archivo donde escribir la solución.
+- ejercicio-pokeapi/js/script.js: punto de entrada de JavaScript.
+- ejercicio-pokeapi/js/dom.js: declara los elementos del DOM y llama a la función de carga.
+- ejercicio-pokeapi/js/functions.js: contiene la función que consulta la PokeAPI y genera las tarjetas.
 - Pokeapi.docx: documento fuente, conservado sin cambios.
 
 ## Cómo abrir el proyecto
@@ -26,14 +28,14 @@ La consigna no tiene título ni número original; por eso se usa el identificado
 2. Inicia Live Server desde el archivo raíz index.html.
 3. Abre el ejercicio desde la tarjeta de la página principal.
 
-Se recomienda Live Server para mantener una ejecución consistente en el navegador. El JavaScript está enlazado como script clásico y no utiliza módulos ES.
+Live Server es necesario porque el proyecto carga JavaScript como módulos ES; los navegadores suelen bloquear esos módulos si se abre el archivo directamente con file://.
 
 ## Dónde escribir y consultar resultados
 
-Escribe la solución en ejercicio-pokeapi/js/script.js. Las estructuras HTML de una tarjeta y un modal están disponibles como plantillas dentro de ejercicio-pokeapi/index.html, y su presentación se define en ejercicio-pokeapi/css/styles.css.
+La primera parte está implementada: dom.js declara los elementos de la página y llama a la función de functions.js, que consulta en paralelo los datos y genera las tarjetas con imagen, nombre, número y tipos en el orden de la API. script.js carga dom.js como punto de entrada. La estructura HTML y los estilos para la futura interacción del modal siguen disponibles, pero su comportamiento todavía no está implementado.
 
-Los resultados de la consigna se presentan en la página del ejercicio: las tarjetas muestran los datos principales y cada una cuenta con una estructura preparada para su modal de detalle. El proyecto no define salida por consola.
+Los 151 resultados se presentan en la página del ejercicio. La NOTA original aparece debajo de las dos partes de la consigna. El proyecto no define salida por consola.
 
 ## Restricciones técnicas
 
-El entorno usa HTML, CSS y JavaScript vanilla, sin dependencias, frameworks ni recursos externos. No incorpora seguimiento de estado ni importación/exportación de progreso.
+El entorno usa HTML, CSS y JavaScript vanilla, sin dependencias ni frameworks. Se conecta a la PokeAPI y carga las imágenes indicadas por sus respuestas, por lo que necesita conexión a internet. No incorpora seguimiento de estado ni importación/exportación de progreso.
