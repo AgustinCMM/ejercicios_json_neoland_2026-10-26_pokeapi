@@ -1,0 +1,3 @@
+//DOM
+export function inicializarApp() {
+}

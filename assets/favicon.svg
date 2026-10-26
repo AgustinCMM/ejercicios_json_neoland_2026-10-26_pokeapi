@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="pokeball-shape">
+      <circle cx="32" cy="32" r="28" />
+    </clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="#fffdf8" stroke="#252a35" stroke-width="4" />
+  <g clip-path="url(#pokeball-shape)">
+    <path d="M4 32a28 28 0 0 1 56 0Z" fill="#df3b42" />
+    <path d="M4 32h56" fill="none" stroke="#252a35" stroke-width="7" />
+  </g>
+  <circle cx="32" cy="32" r="8" fill="#fffdf8" stroke="#252a35" stroke-width="4" />
+</svg>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1e9">
+    <meta
+      name="description"
+      content="Consigna de JSON para consultar datos de Pokémon y mostrarlos en tarjetas."
+    >
+    <title>PokeAPI · Laboratorio Pokémon</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="page-shell site-header__inner">
+        <a class="brand" href="../index.html" aria-label="Laboratorio Pokémon, inicio">
+          <span class="pokeball-mark" aria-hidden="true"></span>
+          <span>Laboratorio Pokémon</span>
+        </a>
+        <span class="course-label">Práctica de JSON</span>
+      </div>
+    </header>
+
+    <main id="contenido" class="page-shell exercise-layout">
+      <a class="back-link" href="../index.html">
+        <span aria-hidden="true">←</span>
+        Volver al inicio
+      </a>
+
+      <header class="exercise-heading">
+        <p class="eyebrow">JSON · PokeAPI</p>
+        <h1>PokeAPI</h1>
+        <p class="exercise-heading__meta">Consigna original sin título ni número en la fuente.</p>
+      </header>
+
+      <section class="content-panel" aria-labelledby="prompt-title">
+        <div class="panel-heading">
+          <span class="panel-heading__mark" aria-hidden="true"></span>
+          <h2 id="prompt-title">Consigna</h2>
+        </div>
+        <div class="prompt-part">
+          <p class="prompt-text">
+            Con base a lo visto en clase, tomar la pokeapi, meterla en un ciclo del 1 al 151 y en cada iteración quiero que generen una tarjeta en el html con la imagen de cada pokémon, el nombre, el número y los tipos (que son 1 o 2), toda esta información se encuentra dentro del json que originalmente les suelta la pokeapi
+          </p>
+        </div>
+        <div class="prompt-part">
+          <h3 class="prompt-part__title">tarea 2</h3>
+          <p class="prompt-text">
+            Tomar la pokeapi y hacer que al darle click a cada tarjeta, aparezca un modal mostrando más datos del mismo pokemon, (imagen, stats, tipo, nombre, etc)
+          </p>
+        </div>
+      </section>
+
+      <section class="content-panel" aria-labelledby="results-title">
+        <div class="results-header">
+          <div class="panel-heading">
+            <span class="panel-heading__mark" aria-hidden="true"></span>
+          <h2 id="results-title">Tarjetas y detalle</h2>
+          </div>
+          <p class="results-caption">Tarjetas con modal de detalle.</p>
+        </div>
+
+        <div
+          id="pokemon-results"
+          class="result-area pokemon-grid"
+          aria-live="polite"
+          aria-label="Resultados de Pokémon"
+        >
+          <div class="empty-state">
+            <span class="empty-state__symbol" aria-hidden="true">◉</span>
+            <p>Las tarjetas y sus detalles aparecerán aquí.</p>
+          </div>
+        </div>
+      </section>
+
+      <template id="pokemon-card-template">
+        <button class="pokemon-card" type="button">
+          <span class="pokemon-card__image-frame">
+            <img class="pokemon-card__image" alt="">
+          </span>
+          <span class="pokemon-card__details">
+            <span class="pokemon-card__number"></span>
+            <span class="pokemon-card__name"></span>
+            <span class="pokemon-card__types" role="list" aria-label="Tipos">
+              <span class="pokemon-card__type" role="listitem"></span>
+            </span>
+          </span>
+        </button>
+      </template>
+
+      <template id="pokemon-modal-template">
+        <dialog class="pokemon-modal" aria-labelledby="pokemon-modal-name">
+          <div class="pokemon-modal__content">
+            <header class="pokemon-modal__header">
+              <div>
+                <p class="pokemon-modal__number"></p>
+                <h2 id="pokemon-modal-name" class="pokemon-modal__name"></h2>
+              </div>
+              <button
+                class="pokemon-modal__close"
+                type="button"
+                aria-label="Cerrar detalle del Pokémon"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </header>
+            <div class="pokemon-modal__body">
+              <div class="pokemon-modal__image-frame">
+                <img class="pokemon-modal__image" alt="">
+              </div>
+              <div class="pokemon-modal__details">
+                <section class="pokemon-modal__section" aria-labelledby="pokemon-modal-types-title">
+                  <h3 id="pokemon-modal-types-title">Tipos</h3>
+                  <div class="pokemon-modal__types" role="list" aria-label="Tipos">
+                    <span class="pokemon-modal__type" role="listitem"></span>
+                  </div>
+                </section>
+                <section class="pokemon-modal__section" aria-labelledby="pokemon-modal-stats-title">
+                  <h3 id="pokemon-modal-stats-title">Stats</h3>
+                  <dl class="pokemon-modal__stats" aria-label="Estadísticas"></dl>
+                </section>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </template>
+    </main>
+
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>
