@@ -14,6 +14,30 @@
   color: inherit;
   background: var(--color-panel);
   box-shadow: 0 8px 20px rgb(37 42 53 / 5%);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgb(37 42 53 / 10%);
+}
+
+.pokemon-card__trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pokemon-card__trigger:focus-visible {
+  outline: 3px solid var(--color-blue);
+  outline-offset: -4px;
+  border-radius: 0.9rem;
 }
 
 .pokemon-card__image-frame {
@@ -128,6 +152,31 @@
   cursor: pointer;
 }
 
+.pokemon-modal__close span {
+  position: relative;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  font-size: 0;
+}
+
+.pokemon-modal__close span::before,
+.pokemon-modal__close span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 2px;
+  background: currentColor;
+  content: "";
+}
+
+.pokemon-modal__close span::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .pokemon-modal__close:focus-visible {
   outline: 3px solid var(--color-blue);
   outline-offset: 3px;
@@ -135,7 +184,7 @@
 
 .pokemon-modal__body {
   display: grid;
-  grid-template-columns: minmax(10rem, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -189,9 +238,66 @@
   margin: 0;
 }
 
+.pokemon-modal__measurements {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.pokemon-modal__measurements > div {
+  padding: 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.7rem;
+  background: #fff;
+}
+
+.pokemon-modal__measurements dt {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+}
+
+.pokemon-modal__measurements dd {
+  margin: 0.2rem 0 0;
+  font-weight: 750;
+}
+
+.pokemon-modal__abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pokemon-modal__ability {
+  padding: 0.25rem 0.65rem;
+  border-radius: 99px;
+  background: #ece9df;
+  font-size: 0.82rem;
+}
+
+.pokemon-modal__stats > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.pokemon-modal__stats dt {
+  color: var(--color-muted);
+  text-transform: capitalize;
+}
+
+.pokemon-modal__stats dd {
+  margin: 0;
+  font-weight: 750;
+}
+
 @media (max-width: 560px) {
   .pokemon-modal__body {
-    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 

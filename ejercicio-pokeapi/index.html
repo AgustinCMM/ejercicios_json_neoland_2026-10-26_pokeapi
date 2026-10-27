@@ -55,7 +55,7 @@
           </p>
         </div>
         <aside class="source-note" aria-label="Nota original de la consigna">
-          <p>
+          <p class="prompt-text">
             NOTA: pueden usar <code>innerHTML+=&#96;&lt;etiqueta&gt;&#96;</code> para insertar etiquetas dentro de otras etiquetas dentro del html, recomiendo que si usan este tip, no usen comillas dobles ni simples, sera mas comodo con el backtick
           </p>
         </aside>
@@ -80,15 +80,17 @@
 
       <template id="pokemon-card-template">
         <article class="pokemon-card">
-          <span class="pokemon-card__image-frame">
-            <img class="pokemon-card__image" alt="" loading="lazy" decoding="async">
-          </span>
-          <span class="pokemon-card__details">
-            <span class="pokemon-card__number"></span>
-            <span class="pokemon-card__name"></span>
-            <span class="pokemon-card__types" role="list" aria-label="Tipos">
+          <button class="pokemon-card__trigger" type="button">
+            <span class="pokemon-card__image-frame">
+              <img class="pokemon-card__image" alt="" loading="lazy" decoding="async">
             </span>
-          </span>
+            <span class="pokemon-card__details">
+              <span class="pokemon-card__number"></span>
+              <span class="pokemon-card__name"></span>
+              <span class="pokemon-card__types" role="list" aria-label="Tipos">
+              </span>
+            </span>
+          </button>
         </article>
       </template>
 
@@ -113,14 +115,42 @@
                 <img class="pokemon-modal__image" alt="">
               </div>
               <div class="pokemon-modal__details">
-                <section class="pokemon-modal__section" aria-labelledby="pokemon-modal-types-title">
+                <section
+                  class="pokemon-modal__section"
+                  aria-labelledby="pokemon-modal-types-title"
+                >
                   <h3 id="pokemon-modal-types-title">Tipos</h3>
                   <div class="pokemon-modal__types" role="list" aria-label="Tipos">
-                    <span class="pokemon-modal__type" role="listitem"></span>
                   </div>
                 </section>
-                <section class="pokemon-modal__section" aria-labelledby="pokemon-modal-stats-title">
-                  <h3 id="pokemon-modal-stats-title">Stats</h3>
+                <section
+                  class="pokemon-modal__section"
+                  aria-labelledby="pokemon-modal-measurements-title"
+                >
+                  <h3 id="pokemon-modal-measurements-title">Medidas</h3>
+                  <dl class="pokemon-modal__measurements">
+                    <div>
+                      <dt>Altura</dt>
+                      <dd class="pokemon-modal__height"></dd>
+                    </div>
+                    <div>
+                      <dt>Peso</dt>
+                      <dd class="pokemon-modal__weight"></dd>
+                    </div>
+                  </dl>
+                </section>
+                <section
+                  class="pokemon-modal__section"
+                  aria-labelledby="pokemon-modal-abilities-title"
+                >
+                  <h3 id="pokemon-modal-abilities-title">Habilidades</h3>
+                  <ul class="pokemon-modal__abilities"></ul>
+                </section>
+                <section
+                  class="pokemon-modal__section"
+                  aria-labelledby="pokemon-modal-stats-title"
+                >
+                  <h3 id="pokemon-modal-stats-title">Estadísticas</h3>
                   <dl class="pokemon-modal__stats" aria-label="Estadísticas"></dl>
                 </section>
               </div>

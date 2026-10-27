@@ -17,9 +17,8 @@ La consigna no tiene título ni número original; por eso se usa el identificado
 - assets/favicon.svg: favicon local con temática de Poké Ball.
 - ejercicio-pokeapi/index.html: consigna, área de resultados y plantillas de tarjeta y modal.
 - ejercicio-pokeapi/css/styles.css: estilos de las tarjetas y del modal.
-- ejercicio-pokeapi/js/script.js: punto de entrada de JavaScript.
-- ejercicio-pokeapi/js/dom.js: declara los elementos del DOM y llama a la función de carga.
-- ejercicio-pokeapi/js/functions.js: contiene la función que consulta la PokeAPI y genera las tarjetas.
+- ejercicio-pokeapi/js/script.js: declara los elementos del DOM, conecta los eventos y llama a las funciones.
+- ejercicio-pokeapi/js/functions.js: consulta la PokeAPI, genera las tarjetas y rellena el modal.
 - Pokeapi.docx: documento fuente, conservado sin cambios.
 
 ## Cómo abrir el proyecto
@@ -32,7 +31,7 @@ Live Server es necesario porque el proyecto carga JavaScript como módulos ES; l
 
 ## Dónde escribir y consultar resultados
 
-La primera parte está implementada: dom.js declara los elementos de la página y llama a la función de functions.js, que consulta en paralelo los datos y genera las tarjetas con imagen, nombre, número y tipos en el orden de la API. script.js carga dom.js como punto de entrada. La estructura HTML y los estilos para la futura interacción del modal siguen disponibles, pero su comportamiento todavía no está implementado.
+El ejercicio consulta en paralelo los datos de los Pokémon del 1 al 151 y genera las tarjetas en el orden de la API con la imagen `sprites.other["official-artwork"].front_default`, nombre, número y tipos. Al pulsar una tarjeta se abre un modal con su imagen encima del resto de información: tipos, altura, peso, habilidades y estadísticas. Los datos del modal provienen de la respuesta ya cargada para esa tarjeta. `script.js` conecta los elementos y eventos con las funciones de `functions.js`.
 
 Los 151 resultados se presentan en la página del ejercicio. La NOTA original aparece debajo de las dos partes de la consigna. El proyecto no define salida por consola.
 
